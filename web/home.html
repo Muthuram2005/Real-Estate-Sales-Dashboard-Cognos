@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Real Estate Sales Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="dashboard-container">
+        <!-- Sidebar Navigation -->
+        <aside class="sidebar">
+            <div class="logo">
+                <h2>🏠 Real Estate Sales</h2>
+            </div>
+            <nav class="nav-menu">
+                <a href="#home" class="nav-link active" data-page="home">
+                    <span class="icon">🏡</span>
+                    <span>Home</span>
+                </a>
+                <a href="#overview" class="nav-link" data-page="overview">
+                    <span class="icon">📊</span>
+                    <span>Overview</span>
+                </a>
+                <a href="#properties" class="nav-link" data-page="properties">
+                    <span class="icon">🏘️</span>
+                    <span>Properties</span>
+                </a>
+                <a href="#sales" class="nav-link" data-page="sales">
+                    <span class="icon">💰</span>
+                    <span>Sales</span>
+                </a>
+                <a href="#agents" class="nav-link" data-page="agents">
+                    <span class="icon">👥</span>
+                    <span>Agents</span>
+                </a>
+                <a href="#analytics" class="nav-link" data-page="analytics">
+                    <span class="icon">📈</span>
+                    <span>Analytics</span>
+                </a>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <header class="header">
+                <h1 id="page-title">Home</h1>
+                <div class="header-actions">
+                    <button class="btn-refresh">🔄 Refresh</button>
+                    <div class="user-profile">
+                        <span>Muthuram S</span>
+                        <div class="avatar">MS</div>
+                    </div>
+                </div>
+            </header>
+
+            <div class="content-area">
+            <!-- Home Page (Default) -->
+               <div id="home-page" class="page active">
+                   <div class="analytics-container">
+                    <h2>Analytics Dashboard</h2>
+                    <p class="intro-text">
+                     The Real Estate Sales Dashboard is an interactive web-based analytics application designed to transform large volumes of Airbnb property data into clear and meaningful visual insights. Built using IBM Cognos Analytics, the platform enables users to explore market behaviour through dynamic charts, real-time metrics, and comparative visualizations. It simplifies complex datasets by presenting trends related to pricing, property type, host activity, location-based performance, and customer engagement in an intuitive single-view interface. By converting raw listings into actionable business intelligence, the website helps investors, hosts, and analysts make informed decisions, identify profitable opportunities, and understand regional market patterns with ease and accuracy.
+                    </p>
+                    <div class="iframe-wrapper">
+                      <iframe 
+                        src="https://us1.ca.analytics.ibm.com/bi/?perspective=dashboard&pathRef=.my_folders%2FDABI%2BProject&action=view&mode=dashboard&subView=model0000019a818ffc1c_00000000&nav_filter=true"
+                        width="100%" 
+                        height="800" 
+                        frameborder="0" 
+                        gesture="media" 
+                        allow="encrypted-media" 
+                        allowfullscreen="">
+                     </iframe>
+                    </div>
+                </div>
+            </div>
+       </div>
+
+
+                <!-- Overview Page -->
+                <div id="overview-page" class="page">
+                    <div class="stats-grid">
+                        <div class="stat-card">
+                            <h3>Total Sales</h3>
+                            <p class="stat-value">$12.5M</p>
+                            <span class="stat-change positive">+15.3%</span>
+                        </div>
+                        <div class="stat-card">
+                            <h3>Properties Sold</h3>
+                            <p class="stat-value">342</p>
+                            <span class="stat-change positive">+8.2%</span>
+                        </div>
+                        <div class="stat-card">
+                            <h3>Active Listings</h3>
+                            <p class="stat-value">128</p>
+                            <span class="stat-change negative">-3.1%</span>
+                        </div>
+                        <div class="stat-card">
+                            <h3>Avg. Price</h3>
+                            <p class="stat-value">$365K</p>
+                            <span class="stat-change positive">+12.7%</span>
+                        </div>
+                    </div>
+
+                    <div class="charts-grid">
+                        <div class="chart-card">
+                            <h3>Monthly Sales Trend</h3>
+                            <div id="sales-chart" class="chart-placeholder">
+                                <img src="month.png" alt="Monthly Sales Trend Chart" style="width:100%; height:auto;">
+                            </div>
+                        </div>
+                        <div class="chart-card">
+                            <h3>Property Types Distribution</h3>
+                            <div id="property-chart" class="chart-placeholder">
+                                 <img src="property.png" alt="Property Types Distribution Chart" style="width:100%; height:auto;">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Properties Page -->
+                <div id="properties-page" class="page">
+                    <div class="table-container">
+                        <h2>Property Listings</h2>
+                        <table class="data-table">
+                            <thead>
+                                <tr>
+                                    <th>ID</th>
+                                    <th>Address</th>
+                                    <th>Type</th>
+                                    <th>Price</th>
+                                    <th>Status</th>
+                                    <th>Agent</th>
+                                </tr>
+                            </thead>
+                            <tbody id="properties-tbody">
+                                <tr>
+                                    <td>#001</td>
+                                    <td>123 Main St, City A</td>
+                                    <td>House</td>
+                                    <td>$450,000</td>
+                                    <td><span class="status available">Available</span></td>
+                                    <td>Sarah Johnson</td>
+                                </tr>
+                                <tr>
+                                    <td>#002</td>
+                                    <td>456 Oak Ave, City B</td>
+                                    <td>Condo</td>
+                                    <td>$280,000</td>
+                                    <td><span class="status sold">Sold</span></td>
+                                    <td>Mike Davis</td>
+                                </tr>
+                                <tr>
+                                    <td>#003</td>
+                                    <td>789 Pine Rd, City C</td>
+                                    <td>Townhouse</td>
+                                    <td>$325,000</td>
+                                    <td><span class="status pending">Pending</span></td>
+                                    <td>Emily Chen</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- Sales Page -->
+                <div id="sales-page" class="page">
+                    <h2>Recent Sales</h2>
+                    <div class="sales-list">
+                        <div class="sale-item">
+                            <div class="sale-info">
+                                <h3>456 Oak Ave, City B</h3>
+                                <p>Sold on: Oct 15, 2025</p>
+                            </div>
+                            <div class="sale-price">$280,000</div>
+                        </div>
+                        <div class="sale-item">
+                            <div class="sale-info">
+                                <h3>321 Elm St, City A</h3>
+                                <p>Sold on: Oct 10, 2025</p>
+                            </div>
+                            <div class="sale-price">$395,000</div>
+                        </div>
+                        <div class="sale-item">
+                            <div class="sale-info">
+                                <h3>654 Maple Dr, City D</h3>
+                                <p>Sold on: Oct 5, 2025</p>
+                            </div>
+                            <div class="sale-price">$520,000</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Agents Page -->
+                <div id="agents-page" class="page">
+                    <h2>Top Performing Agents</h2>
+                    <div class="agents-grid">
+                        <div class="agent-card">
+                            <div class="agent-avatar">SJ</div>
+                            <h3>Sarah Johnson</h3>
+                            <p>Sales: $2.3M</p>
+                            <p>Properties: 18</p>
+                        </div>
+                        <div class="agent-card">
+                            <div class="agent-avatar">MD</div>
+                            <h3>Mike Davis</h3>
+                            <p>Sales: $1.9M</p>
+                            <p>Properties: 15</p>
+                        </div>
+                        <div class="agent-card">
+                            <div class="agent-avatar">EC</div>
+                            <h3>Emily Chen</h3>
+                            <p>Sales: $1.7M</p>
+                            <p>Properties: 12</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Analytics Page -->
+                <div id="analytics-page" class="page">
+                    <h2>Advanced Analytics</h2>
+                    <div class="analytics-grid">
+                        <div class="analytics-card">
+                            <h3>Market Trends</h3>
+                            <p>Average price increasing by 12.7% YoY</p>
+                            <div class="trend-indicator positive">📈 Bullish</div>
+                        </div>
+                        <div class="analytics-card">
+                            <h3>Days on Market</h3>
+                            <p>Average: 45 days</p>
+                            <div class="trend-indicator">📊 Stable</div>
+                        </div>
+                        <div class="analytics-card">
+                            <h3>Price per Sq Ft</h3>
+                            <p>$180 average</p>
+                            <div class="trend-indicator positive">📈 Growing</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
