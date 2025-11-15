@@ -35,7 +35,5 @@ An interactive **Real Estate Sales Dashboard** built using **IBM Cognos Analytic
 - **Microsoft Excel** – Data cleaning & preprocessing  
 - **Cognos Framework Manager** – Metadata modeling  
 
----
 
-## 📁 Project Structure
 
